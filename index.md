@@ -10,7 +10,7 @@ layout: default
 <tr>
 <td width="20%" style='border:none; vertical-align: top;'> <img src="{{site.photo}}" alt="my photo" /> </td>
 <td style="border:none">
-Hi! I'm a software engineer on the fields of Distributed System and Data Analytics. I'm currently focusing on data analytic and processing with <a href="https://flink.apache.org/">Apache Flink</a> and Kafka. Prior to this, I worked at Cloud Storage team that builds in-house S3-like object storage backed by Ceph to support TBs data at Bloomberg LP. Before that, I was a software engineer at <a href="https://www.pandora.com/">Pandora Music</a> focused on music recommendation, discovery and machine learning.
+Hi! I'm a software engineer on the fields of Distributed System and Data Analytics. I'm currently focusing on data analytic and processing with <a href="https://flink.apache.org/">Apache Flink</a> and Kafka. <br/><br/> Prior to this, I worked at Cloud Storage team that builds in-house S3-like object storage backed by Ceph to support TBs data at Bloomberg LP. Before that, I was a software engineer at <a href="https://www.pandora.com/">Pandora Music</a> focused on music recommendation, discovery and machine learning.
 </td>
 </tr></table> 
 
