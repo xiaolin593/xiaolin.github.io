@@ -2,4 +2,4 @@
 layout: post
 ---
 
-<h1 class="post-title p-name" itemprop="name headline">Xiaolin Lin Test</h1>
+<h1 class="post-title p-name" itemprop="name headline">Xiaolin Lin</h1>
