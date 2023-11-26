@@ -4,6 +4,11 @@ author:
   name: Xiaolin Lin
   email: "linxiaolin593@gmail.com"
 
+
+
+linkedin_username: linxiaolin
+github_username: xiaolin593
+
 url: "https://xiaolin593.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 assets: /assets/
