@@ -1,2 +1,11 @@
-theme: jekyll-theme-minimal
 title: Xiaolin's homepage
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://xiaolin.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+permalink: /:title #replaces folder structure /YY/mm/dd/categories/title by only /title
