@@ -1,1 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-26T07:03:52-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Xiaolin Lin</title><author><name>Xiaolin Lin</name><email>linxiaolin593@gmail.com</email></author><entry><title type="html">first test post</title><link href="http://localhost:4000/Test-Post" rel="alternate" type="text/html" title="first test post" /><published>2023-11-26T00:00:00-05:00</published><updated>2023-11-26T00:00:00-05:00</updated><id>http://localhost:4000/Test-Post</id><content type="html" xml:base="http://localhost:4000/Test-Post"><![CDATA[<p>Sorting is probably the most common computer science algorithm. In fact, at some point in life, every CS student studied computational complexity based on the number of operations of different sorting algorithms, measured by the [Big-O notation][bigo]. Sorting of serial algorithms in single compute nodes is a solved problem with dozens of algorithms analyzed. To name a few:</p>]]></content><author><name>Xiaolin Lin</name><email>linxiaolin593@gmail.com</email></author><category term="test" /><category term="doc" /><summary type="html"><![CDATA[Sorting is probably the most common computer science algorithm. In fact, at some point in life, every CS student studied computational complexity based on the number of operations of different sorting algorithms, measured by the [Big-O notation][bigo]. Sorting of serial algorithms in single compute nodes is a solved problem with dozens of algorithms analyzed. To name a few:]]></summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-26T14:52:50-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Xiaolin Lin</title><author><name>Xiaolin Lin</name><email>linxiaolin593@gmail.com</email></author><entry><title type="html">Learning Python - Heap</title><link href="http://localhost:4000/Learning-Python-Heap" rel="alternate" type="text/html" title="Learning Python - Heap" /><published>2023-11-26T00:00:00-05:00</published><updated>2023-11-26T00:00:00-05:00</updated><id>http://localhost:4000/Learning-Python-Heap</id><content type="html" xml:base="http://localhost:4000/Learning-Python-Heap"><![CDATA[<h2 id="basic-heap-operations">Basic Heap Operations</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">heapq</span>
+
+<span class="n">min_heap</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+
+<span class="c1"># sort heap in ascending order
+</span><span class="n">heapq</span><span class="p">.</span><span class="nf">heapify</span><span class="p">(</span><span class="n">min_heap</span><span class="p">)</span>
+
+<span class="c1"># elements in heap after heapify are not necessarily in order
+</span><span class="nf">print</span><span class="p">(</span><span class="n">min_heap</span><span class="p">)</span> 
+
+<span class="c1"># sort heap in descending order
+</span><span class="n">max_heap</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">min_heap</span><span class="p">]</span>
+<span class="n">heapq</span><span class="p">.</span><span class="nf">heapify</span><span class="p">(</span><span class="n">max_heap</span><span class="p">)</span>
+
+<span class="c1"># push new element 11 to min_heap
+</span><span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">min_heap</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="c1"># peek first element at the top of heap
+</span><span class="n">first_element</span> <span class="o">=</span> <span class="n">heapq</span><span class="p">.</span><span class="nf">nlargest</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_heap</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># first_element = min_heap[0]
+</span>
+<span class="c1"># sort a list in place using heap.
+# first heapify
+# second while-loop with heappop() operation
+</span><span class="n">heapq</span><span class="p">.</span><span class="nf">heapify</span><span class="p">(</span><span class="n">min_heap</span><span class="p">)</span>
+<span class="k">while</span> <span class="nf">len</span><span class="p">(</span><span class="n">min_heap</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="n">heapq</span><span class="p">.</span><span class="nf">heappop</span><span class="p">(</span><span class="n">min_heap</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+
+<span class="c1"># re-initialize min_heap
+</span><span class="n">min_heap</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+
+<span class="c1"># push element to heap, then pop and return smallest/largest from heap
+</span><span class="n">element</span> <span class="o">=</span> <span class="n">heapq</span><span class="p">.</span><span class="nf">heappushpop</span><span class="p">(</span><span class="n">min_heap</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># push element to heap, pop and return the smallest item from heap
+</span><span class="n">element</span> <span class="o">=</span> <span class="n">heapq</span><span class="p">.</span><span class="nf">heapreplace</span><span class="p">(</span><span class="n">min_heap</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="c1"># return top N largest elements from heap
+</span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">top_5_largest</span> <span class="o">=</span> <span class="n">heapq</span><span class="p">.</span><span class="nf">nlargest</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">min_heap</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">top_5_largest</span><span class="p">)</span>
+
+<span class="c1"># return top N smallest elements from heap
+</span><span class="n">top_5_smallest</span> <span class="o">=</span> <span class="n">heapq</span><span class="p">.</span><span class="nf">nsmallest</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">min_heap</span><span class="p">,</span> <span class="n">key</span>  <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">top_5_smallest</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="advanced-heap-operations">Advanced Heap Operations</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">heapq</span>
+<span class="c1"># heapsort
+# push all values onto heap and popping off the smallest values one at a time
+</span><span class="k">def</span> <span class="nf">heapsort</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+        <span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">heapq</span><span class="p">.</span><span class="nf">heappop</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">h</span><span class="p">))]</span>
+
+<span class="n">sorted_list</span> <span class="o">=</span> <span class="nf">heapsort</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span>
+
+
+<span class="c1"># useful for assigning comparison values (such as task priorities) along with main record being tracked
+</span><span class="n">h</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="sh">'</span><span class="s">write code</span><span class="sh">'</span><span class="p">))</span>
+<span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="sh">'</span><span class="s">release product</span><span class="sh">'</span><span class="p">))</span>
+<span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sh">'</span><span class="s">write spec</span><span class="sh">'</span><span class="p">))</span>
+<span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="sh">'</span><span class="s">create tests</span><span class="sh">'</span><span class="p">))</span>
+<span class="n">entry</span> <span class="o">=</span> <span class="n">heapq</span><span class="p">.</span><span class="nf">heappop</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h2 id="priorityqueue-implementation-notes">PriorityQueue Implementation Notes</h2>
+<p>A priority queue is common use for a heap, and it presents several implementation challenges:</p>
+<ul>
+  <li>Sort stability: how do you get two tasks with equal priorities to be returned in the order they were originally added?</li>
+  <li>Tuple comparison breaks for (priority,task) pairs if the priorities are equal and the tasks do not have a default comparison order</li>
+  <li>If the priority of a task changes, how do you move it to a new position in the heap?</li>
+  <li>Or if a pending task needs to be deleted, how do you find it and remove from the queue?</li>
+</ul>
+
+<p>A solution for first two challenges is to store entries as 3-element list including priority, an entry count, and the task. The entry count serves as tie-breaker with same priority are returned in the order they were added.</p>
+
+<p>Since no two entry counts are the same, the tuple comparison will never attempt to directly compare two tasks.</p>
+
+<p>Finding a task can be done with a dictionary pointing to an entry in the queue.
+Removing the entry or changing its priority is more difficult because it would break the heap structure invariants. So, a possible solution is to mark the entry as removed and add a new entry with revised priority</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">itertools</span>
+<span class="kn">import</span> <span class="n">heapq</span>
+
+<span class="n">pq</span> <span class="o">=</span> <span class="p">[]</span>                     <span class="c1"># list of entries arranged in a heap
+</span><span class="n">entry_finder</span> <span class="o">=</span> <span class="p">{}</span>           <span class="c1"># mapping of tasks to entries
+</span><span class="n">REMOVED</span> <span class="o">=</span> <span class="sh">'</span><span class="s">&lt;removed-task&gt;</span><span class="sh">'</span>  <span class="c1"># placeholder for a removed task
+</span><span class="n">counter</span> <span class="o">=</span> <span class="n">itertools</span><span class="p">.</span><span class="nf">count</span><span class="p">()</span> <span class="c1"># unique sequence count
+</span>
+<span class="k">def</span> <span class="nf">add_task</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">priority</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="sh">'</span><span class="s">Add a new task or update the priority of an existing task</span><span class="sh">'</span>
+    <span class="k">if</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">entry_finder</span><span class="p">:</span>
+        <span class="nf">remove_task</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="nf">next</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+    <span class="n">entry</span> <span class="o">=</span> <span class="p">[</span><span class="n">priority</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">task</span><span class="p">]</span>
+    <span class="n">entry_finder</span><span class="p">[</span><span class="n">task</span><span class="p">]</span> <span class="o">=</span> <span class="n">entry</span>
+    <span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">pq</span><span class="p">,</span> <span class="n">entry</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">remove_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+    <span class="sh">'</span><span class="s">Mark an existing task as REMOVED. Raise KeyError if not found.</span><span class="sh">'</span>
+    <span class="n">entry</span> <span class="o">=</span> <span class="n">entry_finder</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+    <span class="n">entry</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">REMOVED</span>
+
+<span class="k">def</span> <span class="nf">pop_task</span><span class="p">():</span>
+    <span class="sh">'</span><span class="s">Remove and return the lowest priority task. Raise KeyError if empty.</span><span class="sh">'</span>
+    <span class="k">while</span> <span class="n">pq</span><span class="p">:</span>
+        <span class="n">priority</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">task</span> <span class="o">=</span> <span class="n">heapq</span><span class="p">.</span><span class="nf">heappop</span><span class="p">(</span><span class="n">pq</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">task</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">REMOVED</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">entry_finder</span><span class="p">[</span><span class="n">task</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">task</span>
+    <span class="k">raise</span> <span class="nc">KeyError</span><span class="p">(</span><span class="sh">'</span><span class="s">pop from an empty priority queue</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>]]></content><author><name>Xiaolin Lin</name><email>linxiaolin593@gmail.com</email></author><category term="programming" /><category term="python" /><summary type="html"><![CDATA[Basic Heap Operations ```python import heapq]]></summary></entry></feed>
